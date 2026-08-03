@@ -1,0 +1,26 @@
+/* Backgrounds */
+.bg-body     { background-color: var(--color-bg); }
+.bg-surface  { background-color: var(--color-surface); }
+.bg-surface-elevated { background-color: var(--color-surface-elevated); }
+.bg-primary  { background-color: var(--color-primary); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-transparent { background-color: transparent; }
+
+/* Interactive Hover States */
+.hover\:bg-primary:hover { background-color: var(--color-primary-hover); }
+.hover\:bg-surface:hover { background-color: var(--color-surface); }
+
+/* Text Colors */
+.text-main    { color: var(--color-text); }
+.text-muted   { color: var(--color-text-muted); }
+.text-subtle  { color: var(--color-text-subtle); }
+.text-primary { color: var(--color-primary); }
+.text-danger  { color: var(--color-danger); }
+.text-white   { color: #ffffff; }
+
+.hover\:text-primary:hover { color: var(--color-primary-hover); }
+
+/* Border Colors */
+.border-main    { border-color: var(--color-border); }
+.border-strong  { border-color: var(--color-border-strong); }
+.border-primary { border-color: var(--color-primary); }

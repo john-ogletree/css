@@ -1,0 +1,17 @@
+/* Form Element Resets & Normalizations */
+.input-reset {
+  appearance: none;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--s-2) var(--s-3);
+  font: inherit;
+  color: var(--color-text);
+  width: 100%;
+}
+
+.input-reset:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0px;
+  border-color: transparent;
+}

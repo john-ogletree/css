@@ -1,0 +1,19 @@
+/* Shadows */
+.shadow-none { box-shadow: var(--shadow-none); }
+.shadow-sm   { box-shadow: var(--shadow-sm); }
+.shadow-md   { box-shadow: var(--shadow-md); }
+.shadow-lg   { box-shadow: var(--shadow-lg); }
+.shadow-xl   { box-shadow: var(--shadow-xl); }
+
+/* Opacity */
+.opacity-0   { opacity: 0; }
+.opacity-25  { opacity: 0.25; }
+.opacity-50  { opacity: 0.5; }
+.opacity-75  { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+/* Backdrop Blur (Glassmorphism) */
+.backdrop-blur-none { backdrop-filter: blur(0px); }
+.backdrop-blur-sm   { backdrop-filter: blur(4px); }
+.backdrop-blur      { backdrop-filter: blur(8px); }
+.backdrop-blur-lg   { backdrop-filter: blur(16px); }
