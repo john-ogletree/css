@@ -10,18 +10,13 @@
 </head>
 <body class="bg-body text-main flex flex-col min-h-screen">
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="border-b bg-surface sticky top-0 z-50 backdrop-blur-lg">
-    <div class="container flex justify-between items-center py-4">
+    <div class="container flex items-center py-4">
       <div class="flex items-center gap-2">
         <div class="bg-primary rounded px-2 py-1 text-white font-bold text-xs">CSS</div>
         <span class="font-bold text-lg tracking-tight">Utility Framework</span>
       </div>
-      <nav class="flex items-center gap-4 text-sm font-medium">
-        <a href="#playground" class="text-main hover:text-primary transition-fast">Playground</a>
-        <a href="#components" class="text-main hover:text-primary transition-fast">Components</a>
-        <a href="#cheatsheet" class="text-main hover:text-primary transition-fast">Cheat Sheet</a>
-      </nav>
     </div>
   </header>
 
@@ -99,7 +94,7 @@
           </div>
         </div>
 
-        <!-- Render Target Container (Fixed canvas height issue & prevents overflow overlap) -->
+        <!-- Render Target Container -->
         <div class="bg-body p-6 sm:p-8 rounded-xl border border-strong flex items-center justify-center min-h-[350px] w-full min-w-0 overflow-hidden relative">
           <div id="sandbox-target" class="w-full max-w-md flex flex-col gap-4 p-6 bg-surface-elevated rounded-xl shadow-lg border border-primary transition hover:scale-105">
             <h3 id="target-title" class="text-xl font-bold text-main break-words">Interactive Card Preview</h3>
