@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utility CSS System — Interactive Showcase</title>
+  
+  <!-- Master Import -->
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body class="bg-body text-main flex-col min-h-screen">
+
+  <!-- Header / Navigation -->
+  <header class="border-b bg-surface sticky top-0 z-50 backdrop-blur-lg">
+    <div class="container flex justify-between items-center py-4">
+      <div class="flex items-center gap-2">
+        <div class="w-full h-full bg-primary rounded p-2 text-white font-bold text-xs">CSS</div>
+        <span class="font-bold text-lg tracking-tight">Utility Framework</span>
+      </div>
+      <nav class="flex items-center gap-4 text-sm font-medium">
+        <a href="#playground" class="text-main hover:text-primary transition-fast">Playground</a>
+        <a href="#components" class="text-main hover:text-primary transition-fast">Components</a>
+        <a href="#cheatsheet" class="text-main hover:text-primary transition-fast">Cheat Sheet</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 bg-surface border-b">
+    <div class="container text-center max-w-2xl">
+      <h1 class="text-fluid-lg font-bold tracking-tight mb-4">Zero-Build CSS Utilities</h1>
+      <p class="text-muted text-lg mb-6 leading-relaxed">
+        A pure-CSS utility-first layout engine. Powered by native modern CSS features, zero preprocessors, and zero config blocks.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#playground" class="bg-primary hover:bg-primary-hover text-white font-medium px-6 py-3 rounded-lg transition-fast shadow-md">
+          Open Live Sandbox
+        </a>
+        <a href="#cheatsheet" class="bg-surface-elevated border border-strong text-main font-medium px-6 py-3 rounded-lg hover:bg-surface transition-fast">
+          View Utility Index
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container py-8 flex-1 flex-col gap-12">
+
+    <!-- Section 1: Live Playground -->
+    <section id="playground" class="scroll-smooth">
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold">Interactive Component Sandbox</h2>
+        <p class="text-muted text-sm">Edit the utility class string below to see real-time updates.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Controls & Editor -->
+        <div class="bg-surface p-6 rounded-xl border flex-col gap-4">
+          <label for="class-input" class="text-xs font-bold text-muted tracking-wide">
+            HTML CLASS UTILITIES
+          </label>
+          <input 
+            id="class-input" 
+            type="text" 
+            class="input-reset font-mono text-sm border-strong"
+            value="flex flex-col gap-4 p-6 bg-surface-elevated rounded-xl shadow-lg border border-primary transition hover:scale-105"
+            oninput="updateSandbox()"
+          />
+
+          <label for="text-input" class="text-xs font-bold text-muted tracking-wide">
+            CARD CONTENT TEXT
+          </label>
+          <input 
+            id="text-input" 
+            type="text" 
+            class="input-reset text-sm"
+            value="Interactive Card Preview"
+            oninput="updateSandbox()"
+          />
+
+          <div class="pt-2">
+            <span class="text-xs font-bold text-muted tracking-wide block mb-2">QUICK PRESETS</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="applyPreset('card')" class="text-xs bg-surface-elevated border px-3 py-1.5 rounded cursor-pointer hover:bg-primary hover:text-white transition-fast">
+                Card Preset
+              </button>
+              <button onclick="applyPreset('button')" class="text-xs bg-surface-elevated border px-3 py-1.5 rounded cursor-pointer hover:bg-primary hover:text-white transition-fast">
+                Button Preset
+              </button>
+              <button onclick="applyPreset('badge')" class="text-xs bg-surface-elevated border px-3 py-1.5 rounded cursor-pointer hover:bg-primary hover:text-white transition-fast">
+                Badge Preset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Render Target -->
+        <div class="bg-body p-8 rounded-xl border border-strong flex items-center justify-center min-h-screen relative overflow-hidden">
+          <div id="sandbox-target" class="flex flex-col gap-4 p-6 bg-surface-elevated rounded-xl shadow-lg border border-primary transition hover:scale-105">
+            <h3 id="target-title" class="text-xl font-bold text-main">Interactive Card Preview</h3>
+            <p class="text-muted text-sm">This component is dynamically updating using native utility classes.</p>
+            <button class="bg-primary text-white font-medium px-4 py-2 rounded-md self-start text-sm">Action</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Component Gallery -->
+    <section id="components" class="scroll-smooth">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold">Built-In Layout Examples</h2>
+        <p class="text-muted text-sm">Sample patterns constructed entirely using the utility framework.</p>
+      </div>
+
+      <div class="grid grid-auto-md gap-6">
+        <!-- Feature Card -->
+        <div class="bg-surface p-6 rounded-xl border flex-col gap-3">
+          <div class="w-full h-full bg-primary-light text-primary rounded-lg p-3 inline-flex items-center justify-center font-bold text-lg w-auto self-start">
+            ⚡
+          </div>
+          <h3 class="text-lg font-bold">Zero Build Step</h3>
+          <p class="text-muted text-sm leading-normal">Loads instantly via native browser support using clean root CSS imports.</p>
+        </div>
+
+        <!-- Metric Card -->
+        <div class="bg-surface p-6 rounded-xl border flex-col gap-1">
+          <span class="text-xs font-bold text-muted tracking-wide">PERFORMANCE</span>
+          <span class="text-4xl font-bold text-primary">100%</span>
+          <p class="text-muted text-xs mt-2">Zero JS runtime overhead or bundle weight.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-surface p-6 rounded-xl border flex-col gap-3">
+          <h3 class="text-md font-bold">Subscribe Component</h3>
+          <div class="flex gap-2">
+            <input type="email" placeholder="email@domain.com" class="input-reset text-xs flex-1" />
+            <button class="bg-primary text-white font-medium px-4 py-2 rounded-md text-xs cursor-pointer">
+              Join
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Cheat Sheet Table -->
+    <section id="cheatsheet" class="scroll-smooth">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold">Utility Index & Reference</h2>
+        <p class="text-muted text-sm">Quick reference guide for common framework classes.</p>
+      </div>
+
+      <div class="overflow-x-auto border rounded-xl">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-surface border-b text-xs text-muted font-bold tracking-wide">
+            <tr>
+              <th class="p-4">CATEGORY</th>
+              <th class="p-4">UTILITY CLASS</th>
+              <th class="p-4">PROPERTIES GENERATED</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-strong">
+            <tr>
+              <td class="p-4 font-bold text-primary">Display</td>
+              <td class="p-4 font-mono text-xs">.flex, .grid, .hidden</td>
+              <td class="p-4 text-muted">display: flex / grid / none</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-primary">Flex Direction</td>
+              <td class="p-4 font-mono text-xs">.flex-col, .flex-row</td>
+              <td class="p-4 text-muted">flex-direction: column / row</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-primary">Auto Grid</td>
+              <td class="p-4 font-mono text-xs">.grid-auto-md</td>
+              <td class="p-4 text-muted">repeat(auto-fit, minmax(240px, 1fr))</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-primary">Spacing</td>
+              <td class="p-4 font-mono text-xs">.p-4, .px-6, .gap-4</td>
+              <td class="p-4 text-muted">padding: 1rem, padding-inline: 1.5rem</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-primary">Typography</td>
+              <td class="p-4 font-mono text-xs">.text-fluid-lg</td>
+              <td class="p-4 text-muted">font-size: clamp(1.5rem, 3vw + 1rem, 3rem)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t bg-surface py-6 mt-12 text-center text-xs text-muted">
+    <div class="container">
+      Modular Utility CSS System — Powered by Native Web Standards
+    </div>
+  </footer>
+
+  <!-- Simple Sandbox Handler -->
+  <script>
+    const classInput = document.getElementById('class-input');
+    const textInput = document.getElementById('text-input');
+    const target = document.getElementById('sandbox-target');
+    const targetTitle = document.getElementById('target-title');
+
+    function updateSandbox() {
+      target.className = classInput.value;
+      if (targetTitle) {
+        targetTitle.textContent = textInput.value;
+      }
+    }
+
+    function applyPreset(type) {
+      if (type === 'card') {
+        classInput.value = 'flex flex-col gap-4 p-6 bg-surface-elevated rounded-xl shadow-lg border border-primary transition hover:scale-105';
+        textInput.value = 'Interactive Card Preview';
+      } else if (type === 'button') {
+        classInput.value = 'inline-flex items-center justify-center bg-primary text-white font-bold px-6 py-3 rounded-full shadow-md cursor-pointer hover:bg-primary-hover transition active:scale-95';
+        textInput.value = 'Clickable Button';
+      } else if (type === 'badge') {
+        classInput.value = 'inline-flex items-center gap-2 bg-primary-light text-primary px-3 py-1 rounded-full text-xs font-bold border border-primary';
+        textInput.value = 'Status Active';
+      }
+      updateSandbox();
+    }
+  </script>
+</body>
+</html>
