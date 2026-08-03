@@ -1,4 +1,4 @@
 /* Global Master Entry */
-@import "/tokens.css";
-@import "/reset.css";
-@import "/utilities.css";
+@import "./tokens.css";
+@import "./reset.css";
+@import "./utilities.css";
